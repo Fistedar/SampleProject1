@@ -9,8 +9,8 @@ public class Person {
     protected String address;
 
     public Person(PersonBuilder personBuilder) {
-        if(personBuilder == null){
-             throw new IllegalStateException("Пожалуйста проверьте создание объекта билдера");
+        if (personBuilder == null) {
+            throw new IllegalStateException("Пожалуйста проверьте создание объекта билдера");
         }
         this.name = personBuilder.name;
         this.surname = personBuilder.surname;
@@ -24,7 +24,8 @@ public class Person {
         int age = x.getAsInt();
         return person.setSurname(getSurname()).setAddress(getAddress()).setAge(age - 18);
     }
-    public void setAge(int age){
+
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -50,10 +51,9 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        if(hasAge()){
+        if (hasAge()) {
             return OptionalInt.of(age);
-        }
-        else {
+        } else {
             return OptionalInt.empty();
         }
     }
@@ -64,7 +64,7 @@ public class Person {
     }
 
     public void setAddress(String address) {
-        this.address =address;
+        this.address = address;
     }
 
     public void happyBirthday() {
